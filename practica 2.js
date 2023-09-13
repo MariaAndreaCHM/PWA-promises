@@ -17,21 +17,27 @@ const numRandom = () => {
     });
 }
 
-const cuadrado = () => {
+const cuadrado = (num) => {
     return new Promise((resolve, rej) => {
         
         setTimeout(()=>{
-            num=Math.floor((Math.random() * (100 - 1 + 1)) + 1);
-            resolve(numRandom)
+            num*num
+            resolve(cuadrado)
         
-        },2000)
+        },3000)
            
     });
 }
 
-const tercero = num => {
-    return new Promise((res, rej) => {
-        setTimeout(() => res(Math.sqrt(num)), 1000);
+const raiz = num => {
+    return new Promise((resolve, rej) => {
+        
+        setTimeout(()=>{
+            Math.sqrt(num)
+            resolve(raiz)
+        
+        },3000)
+           
     });
 }
 const promises = Promise.all([
